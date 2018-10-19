@@ -1,0 +1,323 @@
+@text-white:#ffffff;
+@text-dark:#00000;
+@default:#1698D9;
+@default-hover:#2EA8E6;
+@selected:#D91667;
+@selected-hover:#E52E7A;
+@disable:#B3B3B3;
+
+html
+{	
+  margin: 0px;
+  padding: 0px;
+}
+body
+{	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #000;
+	background-image: linear-gradient(0deg,rgba(0,0,0,.5) 0,transparent 50%,rgba(0,0,0,.5)),url(../img/Pattern.png);
+	font-size: 100%;
+	line-height: 1;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+.page 
+{	
+	width: 100%;
+	max-width: 1120px;
+	box-sizing: border-box;
+}
+.page__content
+{
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	-ms-flex-line-pack: distribute;
+	align-content: space-around;
+}
+.page__title
+{	
+	text-shadow: 0 1px 0 #000;
+	margin-bottom: 25px;
+	font-size: 36px;
+	text-align: center;
+	text-shadow: 0 1px 0 #000;
+	color: white;
+	font-family: "exo"; 
+}
+.card
+{
+	box-sizing: border-box;
+    margin: 0 10px 25px;
+}
+.card_content
+{	
+	cursor: pointer;
+	margin-left: auto;
+    margin-right: auto;
+	width: 320px;
+	height: 480px;
+	border: 4px solid;
+	border-radius: 12px;
+	position: relative;
+	-webkit-clip-path: polygon(0% 9%, 13% 0%, 100% 0%, 100% 100%, 0% 100%);
+	clip-path: polygon(0% 9%, 13% 0%, 100% 0%, 100% 100%, 0% 100%);	
+}
+.card_content::before
+{
+	content: '';
+	width:94px;
+	height:94px;
+	position:absolute;
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	left:-51px;
+	top:-68px;
+	
+}
+.card_background
+{
+	background-position: -24px 212px;
+    background-size:368px 360px;
+    background-repeat: no-repeat;
+    background-image: url(/img/Photo.png);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+	border-radius:8px;
+
+	
+}
+.card_content
+{
+    border-color: @default;
+    background-color: white;
+}
+.card_default::before 
+{
+  background:@default;
+}
+.card_default:hover 
+{
+	border-color:@default-hover;
+}
+.card_default:hover::before
+{
+	background:@default-hover;
+}
+.card_default:hover .card_oval
+{
+	background:@default-hover;
+}
+.card_disable
+{
+    border-color: @disable;
+    background-color: #f2f2f2;
+	color: @disable;
+}
+.card_disable .catbg
+{
+		background-image:linear-gradient(135deg,transparent 5%,hsla(0,0%,95%,.5) 0),url(/img/Photo.png),linear-gradient(135deg,transparent 5%,#f2f2f2 0);
+}
+.card_disable::before 
+{
+  background:@disable;
+}
+.card_selected
+{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,000000+100 */
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(122,122,122,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(122,122,122,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(122,122,122,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#7a7a7a',GradientType=0 ); /* IE6-9 */
+	border-color: @selected;
+}
+.out
+{
+	background: white;
+}
+.card_selected::before 
+{
+	background:@selected;
+}
+.card_selected:hover 
+{
+	border-color:@selected-hover;
+}
+.card_selected:hover .card_oval
+{
+	background:@selected-hover;
+}
+.card_selected:hover::before
+{
+	background:@selected-hover;
+}
+.card_content a
+{
+	display: block; 
+    height: 100%;
+}
+
+
+/* загаловки карточек */
+.card_toplabel 
+{
+	position: absolute;
+	top:21px;
+	left:51px;
+	font-size: 16px;
+
+}
+.card_toplabel__out
+{
+	position: absolute;
+	top:21px;
+	left:51px;
+	font-size: 16px;
+	color: #e52d7a;
+	display: none;
+}
+.out .card_toplabel__out
+{	
+	color: #E62E7A;
+	display:block; 
+}
+.out .card_toplabel
+{	
+	display:none; 
+}
+.card_toplabel .card_default
+{
+	color: @default;
+}
+.card_toplabel .card_disable
+{
+	color: @disable;	
+}
+.card_mainlabel
+{
+	position: absolute;
+	top:45px;
+	left:48px;
+	font-size: 48px;	
+	font-weight: bold;
+	
+}
+.card_tastelabel
+{
+	position: absolute;
+	top:100px;
+	left:51px;	
+	font-size: 24px;	
+	font-weight: bold;
+}
+.card_promo p
+{
+	margin:0;
+}
+.card_promo
+{
+	position: absolute;
+	top:143px;
+	left:51px;	
+	font-size: 14px;	
+	color: #666666;
+	max-width: 140px;
+}
+.card_disable .card_promo
+{
+	color: @disable;
+}
+.card_oval{
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	top:384px;
+	left:224px;
+	border-radius: 100px;
+	color: white;	
+}
+.card_default .card_oval
+{
+	background-color: @default;
+}
+.card_selected .card_oval
+{
+	background-color: @selected;
+}
+.card_disable .card_oval
+{
+	background-color: @disable;
+}
+
+.weight
+{	
+	padding-top: 8px;
+	position: relative;
+	text-align: center;
+	font-size: 42px;
+	
+}
+.kg
+{
+	position: relative;
+	text-align: center;
+	
+}
+.card_selected~.card_footer__buy
+{
+	display: block
+}
+.card_disable~.card_footer__out 
+{
+	display: block;
+}
+.card_default~.card_footer__link 
+{
+	display: block;
+}
+.card_footer
+{	
+	display: none;
+	font-size: 13px;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 6px;
+	text-align: center;
+	height: 15px;
+}
+.card_footer,.card_footer__buy
+{	
+	color:white;
+}
+.card_footer__out
+{
+	color: #FFFF66
+}	
+.card_footer a
+{
+	color: @default;
+	border-bottom: 1px dashed @default;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
